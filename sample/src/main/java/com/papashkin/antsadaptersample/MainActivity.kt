@@ -7,6 +7,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var adapter: TestAdapter
+    private val callback = TestCallback()
     private var users: ArrayList<UserModel> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
