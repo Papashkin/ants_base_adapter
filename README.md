@@ -1,4 +1,5 @@
 # Ants base adapter
+[ ![Download](https://api.bintray.com/packages/antsfamily/maven/AntsBaseAdapter/images/download.svg?version=1.0.0) ](https://bintray.com/antsfamily/maven/AntsBaseAdapter/1.0.0/link)
 
 ## Description
 
