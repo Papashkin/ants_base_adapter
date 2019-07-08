@@ -5,6 +5,21 @@
 
 Base Adapter, which is based on (RecyclerView) Adapter and (RecyclerView) ViewHolder using DiffUtil.Callback
 
+## Implementation
+
+Use following code for library implementation:
+
+1. Insert into project *`build.gradle`* file:
+```
+maven {
+    url  "https://antsfamily.bintray.com/maven"
+}
+```
+
+2. Insert into the application *`build.gradle`* file:
+```
+implementation 'com.github.papashkin:antsbaseadapter:1.0.0'
+```
 
 ## Adapter and ViewHolder
 
@@ -82,7 +97,7 @@ val testModule = module {
 ```
 
 ## Authors
-Pavel Antoshkin ([Papashkin](https://github.com/Papashkin)) - _full realization_
+Pavel Antoshkin ([Papashkin](https://github.com/Papashkin)) - *full realization*
 
 
 ## License
