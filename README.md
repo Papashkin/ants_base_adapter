@@ -1,9 +1,10 @@
-# Ants Base Adapter
+# Ants Adapter
 [ ![Download](https://api.bintray.com/packages/antsfamily/maven/AntsBaseAdapter/images/download.svg?version=1.0.0) ](https://bintray.com/antsfamily/maven/AntsBaseAdapter/1.0.0/link)
 
 ## Description
+Ants Adapter is a base Adapter built on [RecyclerView.Adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter) and [RecyclerView.ViewHolder](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html) using [DiffUtil.Callback](https://developer.android.com/reference/android/support/v7/util/DiffUtil.Callback)
 
-Base Adapter, which is based on (RecyclerView) Adapter and (RecyclerView) ViewHolder using DiffUtil.Callback
+This simple adapter allows to develop and manage adapters classes easier.
 
 ## Implementation
 
