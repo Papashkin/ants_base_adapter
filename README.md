@@ -1,4 +1,4 @@
-# Ants base adapter
+# Ants Base Adapter
 [ ![Download](https://api.bintray.com/packages/antsfamily/maven/AntsBaseAdapter/images/download.svg?version=1.0.0) ](https://bintray.com/antsfamily/maven/AntsBaseAdapter/1.0.0/link)
 
 ## Description
@@ -95,6 +95,9 @@ val testModule = module {
   single { TestCallback() } 
 }
 ```
+## Example
+You can find the example of *Ants Adapter* [here](sample)
+
 
 ## Authors
 Pavel Antoshkin ([Papashkin](https://github.com/Papashkin)) - *full realization*
