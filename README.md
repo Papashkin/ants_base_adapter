@@ -1,5 +1,5 @@
 # Ants Adapter
-[ ![Download](https://api.bintray.com/packages/antsfamily/maven/AntsBaseAdapter/images/download.svg?version=1.0.0) ](https://bintray.com/antsfamily/maven/AntsBaseAdapter/1.0.0/link)
+[ ![Download](https://api.bintray.com/packages/antsfamily/maven/AntsBaseAdapter/images/download.svg) ](https://bintray.com/antsfamily/maven/AntsBaseAdapter/_latestVersion)
 
 ## Description
 Ants Adapter is a base Adapter built on [RecyclerView.Adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter) and [RecyclerView.ViewHolder](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html). This simple adapter allows to develop and manage adapters classes easier.
@@ -23,10 +23,10 @@ implementation "com.github.papashkin:antsbaseadapter:$adapter_version"
 
 ## Adapter and ViewHolder
 
-1. You need to create an adapter class extended on `AntsBaseAdapter`:
+1. You create an adapter class extended on `AntsBaseAdapter`:
 
 ```
-class TestAdapter : AntsAdapter<TestViewHolder>() {
+class TestAdapter : AntsAdapter<TestViewHolder, UserModel>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TestViewHolder {
         // create viewHolder here
     }
@@ -34,8 +34,8 @@ class TestAdapter : AntsAdapter<TestViewHolder>() {
 ```
 and a class which is extends on `AntsViewHolder` :
 ```
-class TestViewHolder(view: View) : AntsViewHolder(view) {
-    override fun bind(item: Any, position: Int) {
+class TestViewHolder(view: View) : AntsViewHolder<UserModel>(view) {
+    override fun bind(item: UserModel, position: Int) {
         // do something here
     }
 }
@@ -48,8 +48,7 @@ inflate(parent, R.layout.name_of_your_layout)
 This method returns a view.
 
 
-In `bind` method of `AntsViewHolder` you can override the item type from `Any` to class name you need.
-For example, you have data class `User`:
+As mentioned before `AntsViewHolder` base on generics, and in that case the method `bind` will be overriden with type you need. For example, you have data class `UserModel`:
 ```
 data class UserModel(
     var name: String,
@@ -57,12 +56,11 @@ data class UserModel(
     var age: Int
 )
 ```
-
 in this case the `bind` method will looks like following code:
 ```
-override fun bind(item: Any, position: Int) {
+override fun bind(item: UserModel, position: Int) {
         with(item as UserModel) {
-            // do something with UserModel item.c
+            // do something with UserModel item
         }
     }
 ```
