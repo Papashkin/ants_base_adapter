@@ -26,7 +26,7 @@ publish {
     userOrg = 'antsfamily'
     groupId = 'com.github.papashkin'
     artifactId = 'antsbaseadapter'
-    publishVersion = '1.0.0'
+    publishVersion = '1.1.0'
     desc = 'Library that helps to make easy realization of recycler view adapter and diffUtil callback for it.'
     licences = ['MIT']
     uploadName='AntsBaseAdapter'
