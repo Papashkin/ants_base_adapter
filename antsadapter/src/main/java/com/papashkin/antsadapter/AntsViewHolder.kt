@@ -8,6 +8,4 @@ import android.view.View
  * base class of ViewHolder based on [RecyclerView.ViewHolder]
  * @method 'bind' allows to bind data and view in selected position
  */
-abstract class AntsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    abstract fun bind(item : Any, position: Int)
-}
+abstract class AntsViewHolder<T :Any>(view: View) : RecyclerView.ViewHolder(view), IAntsViewHolder<T>
