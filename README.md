@@ -18,7 +18,7 @@ maven {
 
 2. Insert into the application *`build.gradle`* file:
 ```
-implementation 'com.github.papashkin:antsbaseadapter:1.0.0'
+implementation "com.github.papashkin:antsbaseadapter:$adapter_version"
 ```
 
 ## Adapter and ViewHolder
