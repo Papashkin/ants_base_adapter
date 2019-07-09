@@ -1,3 +1,4 @@
+apply plugin: 'com.novoda.bintray-release'
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
@@ -19,7 +20,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+}
 
+publish {
+    userOrg = 'antsfamily'
+    groupId = 'com.github.papashkin'
+    artifactId = 'antsbaseadapter'
+    publishVersion = '1.1.0'
+    desc = 'Library that helps to make easy realization of recycler view adapter and diffUtil callback for it.'
+    licences = ['MIT']
+    uploadName='AntsBaseAdapter'
+    website = 'https://github.com/Papashkin/ants_base_adapter.git'
 }
 
 dependencies {

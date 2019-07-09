@@ -15,16 +15,16 @@ import android.view.ViewGroup
  * @See RecyclerView.Adapter
  * @see AntsViewHolder
  */
-abstract class AntsAdapter<VH : AntsViewHolder> : RecyclerView.Adapter<VH>(), IAntsBaseAdapter<Any> {
-    private val items: MutableList<Any> = mutableListOf()
-    private var callback: AntsBaseCallback<Any>? = null
+abstract class AntsAdapter<VH : AntsViewHolder<T>, T : Any> : RecyclerView.Adapter<VH>(), IAntsBaseAdapter<T> {
+    private val items: MutableList<T> = mutableListOf()
+    private var callback: AntsBaseCallback<T>? = null
 
-    override fun add(item: Any) {
+    override fun add(item: T) {
         items += item
         notifyItemInserted(items.lastIndex)
     }
 
-    override fun addAll(items: List<Any>) {
+    override fun addAll(items: List<T>) {
         if (items.isEmpty()) return
 
         val startPosition = this.items.lastIndex + 1
@@ -34,7 +34,7 @@ abstract class AntsAdapter<VH : AntsViewHolder> : RecyclerView.Adapter<VH>(), IA
         notifyItemRangeInserted(startPosition, items.size)
     }
 
-    override fun addTo(position: Int, item: Any) {
+    override fun addTo(position: Int, item: T) {
         items.add(position, item)
         notifyItemChanged(position)
     }
@@ -50,11 +50,11 @@ abstract class AntsAdapter<VH : AntsViewHolder> : RecyclerView.Adapter<VH>(), IA
         notifyItemRangeRemoved(0, removedSize)
     }
 
-    override fun setCallback(callback: AntsBaseCallback<Any>) {
+    override fun setCallback(callback: AntsBaseCallback<T>) {
         this.callback = callback
     }
 
-    override fun update(newItems: List<Any>) {
+    override fun update(newItems: List<T>) {
         if (callback != null) {
             callback!!.setLists(items, newItems)
             val diffResult = DiffUtil.calculateDiff(callback!!)
@@ -68,7 +68,7 @@ abstract class AntsAdapter<VH : AntsViewHolder> : RecyclerView.Adapter<VH>(), IA
         }
     }
 
-    override fun getList(): List<Any> = items
+    override fun getList(): List<T> = items
 
     override fun getItemCount(): Int = items.size
 
@@ -78,5 +78,4 @@ abstract class AntsAdapter<VH : AntsViewHolder> : RecyclerView.Adapter<VH>(), IA
     override fun onBindViewHolder(holder: VH, position: Int) {
         holder.bind(items[position], position)
     }
-
 }
