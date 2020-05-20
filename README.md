@@ -1,5 +1,6 @@
 # Ants Adapter
-[ ![Download](https://api.bintray.com/packages/antsfamily/maven/AntsBaseAdapter/images/download.svg) ](https://bintray.com/antsfamily/maven/AntsBaseAdapter/_latestVersion)
+[![](https://jitpack.io/v/Papashkin/ants_base_adapter.svg)](https://jitpack.io/#Papashkin/ants_base_adapter)
+
 
 ## Description
 Ants Adapter is a base Adapter built on [RecyclerView.Adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter) and [RecyclerView.ViewHolder](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html). This simple adapter allows to develop and manage adapters classes easier.
@@ -12,13 +13,15 @@ Use following code for library implementation:
 1. Insert into project *`build.gradle`* file:
 ```
 maven {
-    url  "https://antsfamily.bintray.com/maven"
+    url 'https://jitpack.io'
 }
 ```
 
 2. Insert into the application *`build.gradle`* file:
 ```
-implementation "com.github.papashkin:antsbaseadapter:$adapter_version"
+dependencies {
+	implementation 'com.github.Papashkin:ants_base_adapter:1.1.0'
+}
 ```
 
 ## Adapter and ViewHolder
